@@ -130,10 +130,12 @@ Keep in mind, one service in AWS cannot authenticate & authorize to other AWS se
     2) Manual changes on the console is 100% not encouraged 
     3) If you do some changes on the infra provisioned or managed by terraform, terraform is going to wipe those manual changes when the next run of terraform apply happens.
 
-### When you run terraform apply, is terraform going to create or update or destroy my infrastructure ?
+### When you run terraform apply, is terraform going to create or update or destroy & create my infrastructure ?
 
     1) It depends on the changes that you made on the code or on the infrastructure. 
     2) If you just update the tags , it just replaces without any downtime or interruption
+    3) If you change the instance type, system goes down , updates the instance_type and starts the instance 
+    4) If you change the AMI, then it's like destrying and creating the instance.
 
 
 
@@ -144,3 +146,13 @@ Keep in mind, one service in AWS cannot authenticate & authorize to other AWS se
     2) Select the instance ----> Actions ----> Instance Type ----> Change the isntance the type 
     3) Now start the isntance. 
     4) In none of the clouds, vertical scaling is not possible without downtime.
+
+
+Steps for infra provisioning 
+    
+    ```
+        $ terraform init 
+        $ terraform plan 
+        $ terraform apply -auto-approve 
+
+    ```
