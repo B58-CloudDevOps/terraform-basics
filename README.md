@@ -148,11 +148,21 @@ Keep in mind, one service in AWS cannot authenticate & authorize to other AWS se
     4) In none of the clouds, vertical scaling is not possible without downtime.
 
 
-Steps for infra provisioning 
+### Terraform commands 
     
     ```
         $ terraform init 
         $ terraform plan 
         $ terraform apply -auto-approve 
+
+    ```
+
+OR 
+
+Saving the terraform plan locally and applying it, this guarantees the same apply of the plan
+    ```
+        $ terraform init 
+        $ terraform plan -out=plan.out 
+        $ terraform apply plan.out 
 
     ```
