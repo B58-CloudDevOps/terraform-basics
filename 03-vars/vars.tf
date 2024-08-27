@@ -12,3 +12,19 @@ variable "a" {
 output "op" {
     value = var.a         # This is how we access a variable
 }
+
+
+# List variable 
+
+variable "sample" {
+    default = [
+        100, 
+        "terraform",
+        true  
+    ] 
+}
+
+# printing list variables 
+output "sample_op" {
+    value = var.sample
+}

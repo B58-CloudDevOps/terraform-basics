@@ -185,7 +185,7 @@ Saving the terraform plan locally and applying it, this guarantees the same appl
 ```
     # 1) Numbers 
     # 2) Boolents 
-    # 3) Strings
+    # 3) Strings        ( Only true false and yes no are not supported )
 
 ```
 
@@ -195,4 +195,12 @@ Saving the terraform plan locally and applying it, this guarantees the same appl
     1) Dictionary ( key - value pairs )
     2) List       ( key with multiple values )
     3) Map        ( a key with multiple key-values pairs )
+```
+
+### When and how to use quotes in terraform ?
+
+```
+    1) Strings are always supposed to be enclosed in double-quotes - "sample" 
+    2) Numbers and booleans don't need to be enclosed in strings 
+    3) Single quotes are not supported in terraform 
 ```
