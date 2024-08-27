@@ -5,5 +5,5 @@ output "apple" {
 }
 
 output "grapes" {
-    value = " Graphes color is ${var.fruits["grapes"]["color"]} and ${var.fruits["grapes"]["metric"]} price is ${var.fruits["grapes"]["price"]}"
+    value = " Graphes color is ${var.fruits["grapes"]["color"]} and ${var.fruits["grapes"]["metric"]} price is ${var.fruits["grapes"]["rate"]}"
 }

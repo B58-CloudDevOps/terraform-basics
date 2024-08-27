@@ -243,3 +243,6 @@ IMP Point :
 
     Ref: https://developer.hashicorp.com/terraform/language/functions
 ```
+
+
+### Exception handling in terraform
