@@ -232,4 +232,14 @@ IMP Point :
 
 ### What is *.auto.tfvars ? 
 
-    1) values that are declared in *.auto.tfvars don't have to be mentioned while running and these will be picked by default
+    1) values that are declared in *.auto.tfvars don't have to be mentioned while running tf command and these will be picked by default.
+
+
+### Functions in terraform 
+```
+    1) Functions in terraform are supplied by hashicorp 
+    2) Each and every function has an aciton 
+    3) We cannot make our own functions, we just consume them
+
+    Ref: https://developer.hashicorp.com/terraform/language/functions
+```
