@@ -166,3 +166,15 @@ Saving the terraform plan locally and applying it, this guarantees the same appl
         $ terraform plan -out=plan.out 
         $ terraform apply plan.out 
     ```
+
+### How to correct the style or format automatically in terraform 
+
+```
+        $ terraform fmt --recursive 
+```
+
+
+### In case if you encouter no space left error on /home then follow the process enclosed here:
+```
+    https://github.com/CodingManoj/rhel9-tools/blob/main/GOCD/error.md
+```
