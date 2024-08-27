@@ -24,7 +24,7 @@ variable "sample" {
     ] 
 }
 
-# printing list variables 
+# printing whole list variable
 output "sample_op" {
     value = var.sample
 }
