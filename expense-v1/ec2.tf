@@ -24,6 +24,6 @@ resource "aws_instance" "mysql" {
   vpc_security_group_ids = ["sg-08c9eb09595f5de07"]
 
   tags = {
-    Name = "backend"
+    Name = "mysql"
   }
 }
