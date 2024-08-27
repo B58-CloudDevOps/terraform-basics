@@ -1,1 +1,2 @@
-state_rank = 100 
+# values here will be picked by default
+state_rank = 100
