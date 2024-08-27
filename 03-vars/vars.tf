@@ -30,7 +30,7 @@ output "sample_op" {
 }
 
 output "sample_op_works" {
-    value = "Current topics is ${var.sample[1]} and this supports more than  ${var.sample[0]} cloud providers"
+    value = "Current topics is ${var.sample[1]} and this supports more than ${var.sample[0]} cloud providers"
 }
 
 
