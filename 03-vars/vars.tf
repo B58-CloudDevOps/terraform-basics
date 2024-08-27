@@ -36,3 +36,14 @@ output "sample_op_works" {
 
 # var.sample    : use this only if this is not in between a set of strings 
 # #{var.sample} : use this if your varaible has to be enclosed in a set of strings
+
+
+# Map Varaible 
+
+variable "m" {
+    default = {
+        name = "mike" ,
+        content = "DevOps" ,
+        salary = 10000
+    }
+}
