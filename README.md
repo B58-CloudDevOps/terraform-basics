@@ -204,3 +204,9 @@ Saving the terraform plan locally and applying it, this guarantees the same appl
     2) Numbers and booleans don't need to be enclosed in strings 
     3) Single quotes are not supported in terraform 
 ```
+
+### Variable notations, when to use $ and not to use $ :
+```
+    var.sample    : use this only if this is not in between a set of strings 
+    {var.sample}  : use this if your varaible has to be enclosed in a set of strings
+```

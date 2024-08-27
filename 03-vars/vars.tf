@@ -28,3 +28,11 @@ variable "sample" {
 output "sample_op" {
     value = var.sample
 }
+
+output "sample_op_works" {
+    value = "Current topics is ${var.sample[1]} and this supports more than  ${var.sample[0]} cloud providers"
+}
+
+
+# var.sample    : use this only if this is not in between a set of strings 
+# #{var.sample} : use this if your varaible has to be enclosed in a set of strings
