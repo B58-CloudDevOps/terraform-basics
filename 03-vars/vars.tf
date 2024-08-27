@@ -42,7 +42,7 @@ output "sample_op_works" {
 
 variable "m" {
     default = {
-        name = "mike" ,
+        name = "Mike" ,
         content = "DevOps" ,
         salary = 10000
     }
