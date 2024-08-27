@@ -47,3 +47,7 @@ variable "m" {
         salary = 10000
     }
 }
+
+output "m_op" {
+    value = var.m 
+}
