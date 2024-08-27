@@ -69,3 +69,8 @@ variable "ins_type" {}
 output "env" {
 value = "Current environment is ${var.env} and here we use only ${var.ins_type}"
 }
+
+variable "city" {}
+output "city" {
+    value = "${var.city} is IT Hub"
+}

@@ -218,3 +218,18 @@ Saving the terraform plan locally and applying it, this guarantees the same appl
     2) terraform.tfvars : files with values of the variables.   ( This is the default file )
 
 !!! In terraform, terraform.tfvars is the default file that would be picked by default.
+
+```
+    $ terraform init 
+    $ terraform plan  --var-file=prod.tfvars 
+    $ terraform apply --var-file=prod.tfvars -auto-approve
+```
+
+IMP Point : 
+
+    1) Typically values that are common to all the environments are placed on terraform.tfvars 
+    2) Values that are environment specific are placed on dev.tfvars or prod.tfvars
+
+### What is *.auto.tfvars ? 
+
+    1) values that are declared in *.auto.tfvars don't have to be mentioned while running and these will be picked by default
