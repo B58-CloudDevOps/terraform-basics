@@ -53,5 +53,5 @@ output "m_op" {
 }
 
 output "m_op_words" {
-    value = "${var.m[name]} is a ${var.m[content]} engineer and his salary is ${var.m[salary]}"
+    value = "${var.m["name"]} is a ${var.m["content"]} engineer and his salary is ${var.m["salary"]}"
 }
