@@ -54,3 +54,10 @@ output "m_op" {
 output "m_op_words" {
     value = "${var.m["name"]} is a ${var.m["content"]} engineer and his salary is ${var.m["salary"]}"
 }
+
+### Printing variable values from a file 
+
+variable "state_rank" {}
+output "rank" {
+    value = var.state_rank 
+}
