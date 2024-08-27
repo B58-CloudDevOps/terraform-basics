@@ -15,7 +15,6 @@ output "op" {
 
 
 # List variable 
-
 variable "sample" {
     default = [
         100, 

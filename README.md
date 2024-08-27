@@ -210,3 +210,11 @@ Saving the terraform plan locally and applying it, this guarantees the same appl
     var.sample    : use this only if this is not in between a set of strings 
     {var.sample}  : use this if your varaible has to be enclosed in a set of strings
 ```
+
+
+## What are the files that ends with *.tfvars vs *.tf 
+
+    1) fileName.tf      : files with terraform code 
+    2) terraform.tfvars : files with values of the variables.   ( This is the default file )
+
+!!! In terraform, terraform.tfvars is the default file that would be picked by default.
