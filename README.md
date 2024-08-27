@@ -178,3 +178,21 @@ Saving the terraform plan locally and applying it, this guarantees the same appl
 ```
     https://github.com/CodingManoj/rhel9-tools/blob/main/GOCD/error.md
 ```
+
+
+### Supported Datatypes In Terraform 
+
+```
+    # 1) Numbers 
+    # 2) Boolents 
+    # 3) Strings
+
+```
+
+### Variable types : 
+
+```
+    1) Dictionary ( key - value pairs )
+    2) List       ( key with multiple values )
+    3) Map        ( a key with multiple key-values pairs )
+```
