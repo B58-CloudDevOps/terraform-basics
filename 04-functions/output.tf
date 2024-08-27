@@ -1,7 +1,7 @@
 variable "fruits" {} 
 
 output "apple" {
-    value = " Apple color is ${var.fruits["apple"]["color"]} and ${var.fruits["apple"]["metric"]} price is ${var.fruits["apple"]["price"]}"
+    value = " Apple color is ${lookup(var.fruits["apple"], "color" , "green" )} and ${var.fruits["apple"]["metric"]} price is ${var.fruits["apple"]["price"]}"
 }
 
 output "grapes" {

@@ -245,4 +245,8 @@ IMP Point :
 ```
 
 
-### Exception handling in terraform
+### Exception handling in terraform 
+
+    1) If you don't declare a key and if you try to use it, it returns a value
+    2) We want to make sure, if values are not delcared, we need to pick a default value.
+    3) using  `lookup` funciton in terraform we can do efficiently when dealing map variables 
