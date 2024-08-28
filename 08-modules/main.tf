@@ -15,3 +15,7 @@ variable "colors" {
 }
 
 ### Whatever the variables that you're defining here, should also be defined in the backend as an empty variable
+
+output "dev" {
+  value = module.test.msg
+}
