@@ -275,3 +275,12 @@ Ref: https://developer.hashicorp.com/terraform/language/meta-arguments/for_each
 ```
     condition ? true_val : false_val
 ```
+
+### Typically when we are writing terraform, we need to write this in such a way where the code is so agnoistic to project and it can be ised in any projects.
+
+Modules In Terrraform will helps in writing code dry and the same time reusable. 
+
+Where can I get the modules ?
+
+    1) We can get lot of readyMade modules in `registry.terraform.io` (not much controlled) or   
+    2) We can make our own modules    ( More controlled approach )
