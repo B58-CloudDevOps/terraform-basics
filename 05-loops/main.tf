@@ -8,5 +8,5 @@ resource "null_resource" "fruits" {
 } 
 
 variable "fruits" {
-    default = ["orange" , "peer" , "grapes"]
+    default = ["grapes" , "orange" , "peer" ]
 }
