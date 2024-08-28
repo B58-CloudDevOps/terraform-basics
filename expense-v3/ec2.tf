@@ -14,12 +14,15 @@ variable "components" {
   default = {
     frontend = { # each.key
       instance_type = "t3.small"
+      bu            = "development"
     }
     backend = {
       instance_type = "t3.micro" # each.value
+      bu            = "development"
     }
     mysql = {
       instance_type = "t2.micro"
+      bu            = "dba"
     }
   }
 }
