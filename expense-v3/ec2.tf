@@ -14,8 +14,9 @@ resource "aws_instance" "main" {
 variable "components" {
   default = {
     frontend = { # each.key
-      instance_type = "t3.small"
       bu            = "development"
+      instance_type = "t3.small"
+
     }
     backend = {
       instance_type = "t3.micro" # each.value
@@ -27,3 +28,7 @@ variable "components" {
     }
   }
 }
+
+
+### key is frontend  ( which can be called by each.key )
+### All the values of it can be referenced by using each.value or to pick a specific value we go as shown.

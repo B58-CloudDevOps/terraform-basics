@@ -259,3 +259,19 @@ The for_each meta-argument accepts a map or a set of strings, and creates an ins
 
 Ref: https://developer.hashicorp.com/terraform/language/meta-arguments/for_each
 ```
+
+### For better learning, always ensure these 4 pillars are covered 
+
+```
+    1) Conditions             ( This is like a if else condition and it don't offer multiple else condions )
+    2) Variables 
+    3) Functions 
+    4) Loops 
+```
+
+
+### Conditional expressions in terraform 
+
+```
+    condition ? true_val : false_val
+```
