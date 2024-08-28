@@ -10,9 +10,7 @@ module "test" {
 
 
 
-variable "colors" {
-  default = ["grey", "green"]
-}
+variable "colors" {}
 
 ### Whatever the variables that you're defining here, should also be defined in the backend as an empty variable
 
