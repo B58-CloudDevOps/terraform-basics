@@ -7,6 +7,7 @@ resource "aws_instance" "main" {
 
   tags = {
     Name = each.key
+    bu   = each.value["bu"]
   }
 }
 
