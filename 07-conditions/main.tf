@@ -10,5 +10,5 @@ resource "aws_instance" "main" {
 }
 
 variable "env" {
-  default = "dev"
+  default = "stage"
 }
