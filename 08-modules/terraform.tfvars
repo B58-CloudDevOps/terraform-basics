@@ -1,1 +1,1 @@
-colors = ["ornage", "green"]
+colors = ["ornage", "green", "dark-green"]
