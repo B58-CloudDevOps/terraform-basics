@@ -250,3 +250,10 @@ IMP Point :
     1) If you don't declare a key and if you try to use it, it returns a value
     2) We want to make sure, if values are not delcared, we need to pick a default value.
     3) using  `lookup` funciton in terraform we can do efficiently when dealing map variables 
+
+
+### When we are dealing at scale, `for-each` is going to make things handy and helps in efficient way to organize the code.
+
+```
+The for_each meta-argument accepts a map or a set of strings, and creates an instance for each item in that map or set. Each instance has a distinct infrastructure object associated with it, and each is separately created, updated, or destroyed when the configuration is applied.
+```
