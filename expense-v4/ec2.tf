@@ -1,8 +1,11 @@
-# Count offers in list and it has it's own cons, so going through for-each will amplify on what we are doing
+
+# If instance_type is not there, then return null  ( So we handling values with keys and without keys as well )
+# synta: try(local.foo.bar, "fallback")
+# ref: https://developer.hashicorp.com/terraform/language/functions/try
 resource "aws_instance" "main" {
   for_each               = var.components
   ami                    = "ami-0fcc78c828f981df2"
-  instance_type          = each.value["instance_type"] == ".*" ? each.value["instance_type"] : "t2.small"
+  instance_type          = try(each.value["instance_type"], null) == ".*" ? each.value["instance_type"] : "t2.small"
   vpc_security_group_ids = ["sg-08c9eb09595f5de07"]
 
   tags = {
