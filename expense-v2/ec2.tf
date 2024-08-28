@@ -10,6 +10,5 @@ resource "aws_instance" "main" {
 }
 
 variable "components" {
-  default = ["frontend", "backend", "mysql"]
+  default = ["frontend", "mysql", "backend"]
 }
-
