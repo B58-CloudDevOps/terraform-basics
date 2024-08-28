@@ -5,11 +5,11 @@ resource "aws_instance" "main" {
   vpc_security_group_ids = ["sg-08c9eb09595f5de07"]
 
   tags = {
-    Name = 
+    Name = var.components[count.index]
   }
 }
 
 variable "components" {
-  default = ["frontend" , "backend" , "mysql"]
+  default = ["frontend", "backend", "mysql"]
 }
- 
+
