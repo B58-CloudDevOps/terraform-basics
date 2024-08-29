@@ -3,6 +3,13 @@ data "aws_route53_zone" "main" {
   private_zone = true
 }
 
-# output "zone_info" {
-#   value = data.aws_route53_zone.main.id 
-# }
+data "aws_security_group" "main" {
+  filter {
+    name   = "groups-name"
+    values = "b58-allows-all"
+  }
+}
+
+output "sgid" {
+  value = data.aws_security_group.main
+}
