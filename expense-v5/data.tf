@@ -5,7 +5,7 @@ data "aws_route53_zone" "main" {
 
 data "aws_security_group" "main" {
   filter {
-    name   = "groups-name"
+    name   = "group-name"
     values = "b58-allows-all"
   }
 }
