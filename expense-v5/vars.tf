@@ -27,5 +27,5 @@ data "aws_security_group" "main" {
 }
 
 output "sgid" {
-  value = data.aws_security_group.main.id
+  value = data.aws_security_group.main
 }
