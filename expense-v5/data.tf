@@ -3,6 +3,6 @@ data "aws_route53_zone" "main" {
   private_zone = true
 }
 
-output "zone_info" {
-  value = data.aws_route53_zone.main
-}
+# output "zone_info" {
+#   value = data.aws_route53_zone.main.id 
+# }

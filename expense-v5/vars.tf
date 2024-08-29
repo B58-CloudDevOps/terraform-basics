@@ -21,7 +21,3 @@ variable "ami" {
 variable "vpc_security_group_ids" {
   default = ["sg-08c9eb09595f5de07"] # Please don't copy this, use as per the b58-sg that you've created.
 }
-
-variable "zone_id" {
-  default = "Z05544242107X3QLYUZ0E" # Please don't copy this, use your own zone's hosted id.
-}
