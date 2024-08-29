@@ -353,3 +353,25 @@ This relation is very inportant while passing the information between the module
     1) EC2 instances should be created & while the instances instances comes up - ansible should be triggered to have the configuation management and this will complete the app to come up.  ( Terraform calling ansible scripts )
     2) Associated DNS Records should be created.
 ```
+
+
+### How terraform can read the information about the resources that are already created and these 3 values I don't want to hardcode.
+
+```
+    variable "ami" {
+    default = "ami-0fcc78c828f981df2"
+    }
+
+    variable "vpc_security_group_ids" {
+    default = ["sg-08c9eb09595f5de07"] # Please don't copy this, use as per the b58-sg that you've created.
+    }
+
+    variable "zone_id" {
+    default = "Z05544242107X3QLYUZ0E" # Please don't copy this, use your own zone's hosted id.
+    }
+
+```
+
+### Datasource : This helps in extracting the information of the existing resources.
+
+For each and every resource we have datasource available in the terraform documentaiton of the intended resource.
