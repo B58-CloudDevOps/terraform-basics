@@ -167,6 +167,13 @@ Saving the terraform plan locally and applying it, this guarantees the same appl
         $ terraform apply plan.out 
     ```
 
+### Terraform init and what all it can do ?
+
+    1) It can initialize the backend 
+    2) Initializes the modules  ( if you mention modules in the code )
+    3) Initializing provider plugins.
+
+
 ### How to correct the style or format automatically in terraform 
 
 ```
@@ -284,3 +291,65 @@ Where can I get the modules ?
 
     1) We can get lot of readyMade modules in `registry.terraform.io` (not much controlled) or   
     2) We can make our own modules    ( More controlled approach )
+
+```
+    > In terraform, everything is a module and the folder where you run the terraform commands is root module 
+    > Root module:
+
+        Every Terraform configuration has at least one module, known as the root module. The root module is made up of the resources defined in the main working directory's .tf files
+
+    Usage of terraform modules comes with responsibility and sometimes code complications and length.
+```
+
+
+### How are we going to manage modules ?
+
+    1) We will create our own modules on our repository 
+    2) We will source them to our code.
+
+
+### Backend / Child Module vs root module 
+
+    1) root module    : That's the folder or path where we are calling the actual module and here is where we run the terraform commands 
+    2) backend module : Actual modules code ( child module : we are going to maintain on a separate repository )
+
+
+### Passing the info from root-module to backend module 
+
+Rule of thumb, if you're using a variable in root module, that empty variable has to be declared in the child module, before you use and that where the data-transfer will happen. ( that's a way of receiving the data from the root module )
+
+```
+    1) Declare the variable in the root module
+    2) Define the value for that in the root module
+    3) Declare am empty variable with the same name 
+    4) Then use it in the backend module
+
+```
+
+
+### How to retrieve the info from backend to root module ?
+    1) We have code in the backend module that creates EC2 and in the root module, we would like to print the print the ip-address of the instance 
+    2) This goes by outputs
+
+
+### Outputs :
+    1) Outputs in terraform are not just for printing the information 
+    2) They also play a role in transferring the information from one module to other module.
+
+
+This relation is very inportant while passing the information between the modules :
+
+```
+    1) Inputs provided in *.tfvars 
+    2) Declare associated empty variables in teh root-module ( vars.tf )
+    3) Send the input to the module in the root-module 
+    4) Declare the empty varaible in the backend module to get the value from root 
+    5) Use the variable in the child module
+```
+
+
+> Terraform Goals to achieve close our problem statements : 
+```
+    1) EC2 instances should be created & while the instances instances comes up - ansible should be triggered to have the configuation management and this will complete the app to come up.  ( Terraform calling ansible scripts )
+    2) Associated DNS Records should be created.
+```
