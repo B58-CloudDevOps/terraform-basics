@@ -31,3 +31,4 @@ resource "null_resource" "app" {
     command = "sleep 10; cd /home/ec2-user/ansible ; ansible-playbook -i inv-dev  -e ansible_user=ec2-user -e ansible_password=DevOps321 -e COMPONENT=${var.name} -e ENV=dev -e PWD=ExpenseApp@1 expense.yml"
   }
 }
+variable "PWD" {}
