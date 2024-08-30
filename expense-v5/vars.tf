@@ -12,4 +12,6 @@ variable "components" {
   }
 }
 
-variable "PWD" {}
+variable "pwd" {
+  default = "ExpenseApp@1"
+}

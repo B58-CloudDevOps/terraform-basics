@@ -7,5 +7,5 @@ module "app" {
   name                   = each.key
   vpc_security_group_ids = [data.aws_security_group.main.id]
   zone_id                = data.aws_route53_zone.main.id
-  PWD                    = var.PWD
+  pwd                    = var.pwd
 }
