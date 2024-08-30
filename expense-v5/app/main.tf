@@ -23,6 +23,10 @@ resource "aws_route53_record" "main" {
 # For this to control the order of execution we can something called as depends_on
 resource "null_resource" "main" {
   depends_on = [aws_route53_record.main, aws_instance.main]
+
+  triggers = {
+    always_run = true
+  }
   provisioner "local-exec" {
     command = "sleep 10; cd /home/ec2-user/ansible ; ansible-playbook -i ${aws_instance.main.private_ip},  -e ansible_user=ec2-user -e ansible_password=DevOps321 -e COMPONENT=${var.name} -e ENV=dev  expense.yml"
   }

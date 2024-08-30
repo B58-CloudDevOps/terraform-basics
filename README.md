@@ -389,6 +389,14 @@ Goal :
     3) File provisioner        ( To copy something from local to the created instance )
     4) Connection-block        ( This helps in enabling authentication on the created infrastructure from where we are running terraform )
 
+Provisioners by default are run-time, what does it mean ?
+    ```
+        That means they will only be executed during the creation of the infrastructure.
+        Not all the time you run. 
+
+        You can change this behavior that every run should trigger the provisioner, we can use triggers.
+        
+    ```
 
 ### What are the points that we need to keep in mind when dealing provisioners ?
 
