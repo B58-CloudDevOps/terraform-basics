@@ -21,7 +21,7 @@ resource "aws_route53_record" "main" {
 
 # This is dependent on ec2 instance and route53 record creation. Once both of created, then only I would like to run this.
 # For this to control the order of execution we can something called as depends_on
-resource "null_resource" "main" {
+resource "null_resource" "app" {
   depends_on = [aws_route53_record.main, aws_instance.main]
 
   triggers = {
