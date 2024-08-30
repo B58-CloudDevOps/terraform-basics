@@ -11,3 +11,5 @@ variable "components" {
     }
   }
 }
+
+variable "PWD" {}
