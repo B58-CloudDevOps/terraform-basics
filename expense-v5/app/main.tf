@@ -19,8 +19,11 @@ resource "aws_route53_record" "main" {
 }
 
 
+# This is dependent on ec2 instance and route53 record creation. Once both of created, then only I would like to run this.
+# For this to control the order of execution we can something called as depends_on
 resource "null_resource" "main" {
+  depends_on = [aws_route53_record.main, aws_instance.main]
   provisioner "local-exec" {
-    command = "sleep 20 ; cd /home/ec2-user/ansible ; ansible-playbook -i ${self.private_ip},  -e ansible_user=ec2-user -e ansible_password=DevOps321 -e COMPONENT=${var.name} -e ENV=dev   expense.yml"
+    command = "sleep 10; cd /home/ec2-user/ansible ; ansible-playbook -i ${aws_instance.main.private_ip},  -e ansible_user=ec2-user -e ansible_password=DevOps321 -e COMPONENT=${var.name} -e ENV=dev  expense.yml"
   }
 }
