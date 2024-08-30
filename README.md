@@ -396,3 +396,13 @@ Goal :
     2) Due to some factors, if the provisioner fails, terraform considers it as a resource failure and this will recreate the instance, when run the terraform in the next time. 
     3) Prefer to keep it outside the resource block and inside a null_resource ( Becauser provisioners cannot live outside the resource block )
     4) This was, we can control which one to be created first and next ( when certain flows are not organic)
+
+
+
+### How to control the order of execution of resources : 
+    > frontend, backend , mysql
+
+        1) mysql: this should be created first 
+        2) backend: this should be created next to mysql 
+        3) frontend: Once everything are operation, then we would like to run the frontend 
+    
