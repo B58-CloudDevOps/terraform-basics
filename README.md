@@ -373,5 +373,26 @@ This relation is very inportant while passing the information between the module
 ```
 
 ### Datasource : This helps in extracting the information of the existing resources.
-
 For each and every resource we have datasource available in the terraform documentaiton of the intended resource.
+
+
+Goal :
+1) As a infra provisioning by terraform, I want terraform to call the ansible playbook and this will run the configuration management and this will maje our application with a single a single click of a button. 
+
+### Provsioners 
+ These help in doing tasks on the top of the created infrastructure either from the machine where we are running the terraform or on the top of the created infrastructure.
+
+ Majorly provisioners are of 3 types:
+    
+    1) Local-exec              ( If you want to run something on the top of the machine where you're running the terraform commands )
+    2) Remote-exec             ( If you want to run something on the top of the provisioner infra )
+    3) File provisioner        ( To copy something from local to the created instance )
+    4) Connection-block        ( This helps in enabling authentication on the created infrastructure from where we are running terraform )
+
+
+### What are the points that we need to keep in mind when dealing provisioners ?
+
+    1) It's not recommended to keep the provisioners with in the resource.
+    2) Due to some factors, if the provisioner fails, terraform considers it as a resource failure and this will recreate the instance, when run the terraform in the next time. 
+    3) Prefer to keep it outside the resource block and inside a null_resource ( Becauser provisioners cannot live outside the resource block )
+    4) This was, we can control which one to be created first and next ( when certain flows are not organic)
