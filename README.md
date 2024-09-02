@@ -395,7 +395,7 @@ Provisioners by default are run-time, what does it mean ?
         Not all the time you run. 
 
         You can change this behavior that every run should trigger the provisioner, we can use triggers.
-        
+
     ```
 
 ### What are the points that we need to keep in mind when dealing provisioners ?
@@ -413,4 +413,16 @@ Provisioners by default are run-time, what does it mean ?
         1) mysql: this should be created first 
         2) backend: this should be created next to mysql 
         3) frontend: Once everything are operation, then we would like to run the frontend 
+    
+### What's next ?
+
+    1) Backend 
+    2) Code is not multi-environmental
+    3) No UI yet for terraform apply
+
+
+
+### How terraform knew that it has to re-create or destroy or create or update the infrastructure when we run terraform apply ?
+
+    1) How terraform is managing the registry or tracking of the infra created by it ( Backend / State )
     
