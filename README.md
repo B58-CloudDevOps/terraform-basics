@@ -383,7 +383,7 @@ Goal :
  These help in doing tasks on the top of the created infrastructure either from the machine where we are running the terraform or on the top of the created infrastructure.
 
  Majorly provisioners are of 3 types:
-    
+
     1) Local-exec              ( If you want to run something on the top of the machine where you're running the terraform commands )
     2) Remote-exec             ( If you want to run something on the top of the provisioner infra )
     3) File provisioner        ( To copy something from local to the created instance )
@@ -414,7 +414,7 @@ Provisioners by default are run-time, what does it mean ?
         2) backend: this should be created next to mysql 
         3) frontend: Once everything are operation, then we would like to run the frontend 
     
-### What's next ?
+### Whats next ?
 
     1) Backend 
     2) Code is not multi-environmental
@@ -431,3 +431,37 @@ Provisioners by default are run-time, what does it mean ?
 Goals:
     1) Backend
     2) UI 
+
+
+### When you do a terraform apply, what exactly is happening ?
+
+    1) Your code will be validated against the stateFile and the infra on AWS.
+    2) If there are no changes, tf just refreshes and saying nothing to update.
+    3) If there are any any deviations between what is there in the code vs what is there in the stateFile vs the infra on AWS, then those changes will be listed as per the code which is the source of truth, then those changes will be applied.
+
+
+### What will happen if you lose the stateFile ? 
+    1) Terraform lose track of everything and technically it's a mess then. 
+
+
+### Since the stateFile is quite important,we need to make sure we never lose it.
+
+    So, storing and organizing statefile should have a well defined strategy.
+
+        1) Ensure statefile is never stored locally.
+        2) Ensure, then entire team should refer the statefile locally.
+        3) Ensure, non2 team members should run the terraform apply at a time, even if they run only one apply be executed. Other should be prompted with a msg saying it's locked. 
+        4) Ensure version control is enabled for the statefile. 
+        5) And the place where you store your Terraform Statefile is referred as a backend. Based on the cloud provider, Hashicorp supports n number of backends. 
+
+### AWS S3 : Simple Secure Storage ( Both for storing the data & hosting websites )
+
+    1) A Service on AWS to store almost infite amount of storage ( we just need to pay based on the storage you used )
+    2) Storage Class: Type of storage and based on this billing would be coming through ( This defines how fast can you retrieve the stored data )
+    3) Be mindful when selecting the S3 Bucket Name
+
+    > Funny Incident: A user created a bucket and the bucket was empty and he was billed 1200$
+    > https://cybernews.com/news/amazon-bucket-name-can-cause-massive-bill/
+
+Assignment:
+    Read S3: https://aws.amazon.com/s3/ 
