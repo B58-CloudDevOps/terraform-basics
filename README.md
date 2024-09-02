@@ -425,4 +425,9 @@ Provisioners by default are run-time, what does it mean ?
 ### How terraform knew that it has to re-create or destroy or create or update the infrastructure when we run terraform apply ?
 
     1) How terraform is managing the registry or tracking of the infra created by it ( Backend / State )
-    
+
+
+
+Goals:
+    1) Backend
+    2) UI 
