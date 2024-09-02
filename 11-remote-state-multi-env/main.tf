@@ -1,8 +1,8 @@
-resource "null_resource" "main" {}
+resource "null_resource" "sample" {}
 
-resource "null_resource" "bar" {}
+resource "null_resource" "simple" {}
 
-resource "null_resource" "foo" {}
+resource "null_resource" "dimple" {}
 
 provider "aws" {}
 
