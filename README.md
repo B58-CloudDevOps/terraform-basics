@@ -465,3 +465,7 @@ Goals:
 
 Assignment:
     Read S3: https://aws.amazon.com/s3/ 
+
+
+### Keep in mind, the infra code that you're designing should be multi-environment and should be DRY. 
+    >  Dev ----> QA ----> Prod 
