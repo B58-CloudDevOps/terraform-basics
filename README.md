@@ -469,3 +469,42 @@ Assignment:
 
 ### Keep in mind, the infra code that you're designing should be multi-environment and should be DRY. 
     >  Dev ----> QA ----> Prod 
+
+
+
+> Code Structure :
+
+    1) tf-module-terraform: backend module ( actual code of the objects ) 
+    2) expense-terraform: root-module ( code to source the backend module )
+
+
+# IMP Use Case:
+1) Terraform overrides the changes that are done manually on a resource managed by it.
+2) If you want to tell terraform to ingore some parameters created by it, you can that using lifecycle policies in terraform.
+
+Here are few of the offered terraform lifeCycle:
+    Lifecycle policies:
+        1) ignore_changes          : mentioned property changes will be ignore by terraform
+        2) prevent_destroy         : ensure terraform is not going to destroy the resources created by it
+        3) create_before_destroy   : when you attempt to destroy the infra, new infra will be created first and then the old will be destroyed
+
+
+
+Terraform Interview Questions
+1) How are you managing the state file in terraform ?
+2) Why terraform, as you're already on AWS, why are you not using CFT ? 
+3) If you're terraform state is corrupted, what would you do ? [[ versioning is enabled on s3 bucket, you'll simply go back to the previous state ]]
+4) What is terraform drift and how do you handle it ?
+5) What is terraform.state and terraform.state.backup ? 
+6) How do delete terraform cache ?
+7) How do I list the objects that are created by terraform when you're in the repo ?
+8) What is a provisioner & null resource in terraform ? 
+9) Why provisioners are referred as create time provisioners ?
+10) How can we make sure that provisioners are executed all the time you run terraform plan / apply ?
+11) How can we ensure that terraform won't destroy resources accidentally ?
+      
+       Terraform has life cycte policies: 
+		1) prevent_destroy  
+		2) create_before_destroy
+		3) ingore
+12) How do you integrate AWS S3 with DynamoDB for state locking mechanism ?

@@ -9,3 +9,4 @@ module "app" {
   zone_id                = data.aws_route53_zone.main.id
   pwd                    = var.pwd
 }
+
